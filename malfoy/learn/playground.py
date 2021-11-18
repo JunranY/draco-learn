@@ -112,6 +112,6 @@ if __name__ == "__main__":
 
     spec_dir = absolute_path("./data/compassql_examples")
     dataset = data_util.load_partial_full_data(spec_dir)
-    output_file = absolute_path("./data/spec_pairs/draco_cql_default_weights.json")
+    # output_file = absolute_path("./data/spec_pairs/draco_cql_default_weights.json")
     play(dataset, train_weights=False, output_file=output_file)
     # open `http://localhost:3000/specviewer?data=spec_pairs/draco_cql_default_weights.json`
