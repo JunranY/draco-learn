@@ -150,8 +150,9 @@ def load_unlabeled_specs() -> Dict[str, UnlabeledExample]:
 
 def count_violations_memoized(processed_specs: Dict[str, Dict], task: Task):
     key = task.to_asp_str()
+
     if key not in processed_specs:
-        violations = count_violations(task)
+        violations = count_violations(task.to_asp_list())
         if violations is not None:
             processed_specs[key] = violations
     return processed_specs[key]
@@ -200,6 +201,7 @@ def pair_partition_to_vec(
             processed_specs,
             Task(example.data, Query.from_vegalite(example[4]), example.task),
         )
+
         pos_feature_vec = count_violations_memoized(
             processed_specs,
             Task(example.data, Query.from_vegalite(example[5]), example.task),

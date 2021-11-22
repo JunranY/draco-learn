@@ -49,6 +49,7 @@ def count_violations(draco_query: List[str], debug=False) -> Optional[Dict[str, 
         silence_warnings=True,
         debug=debug,
     )
+
     if result is not None:
         return result.violations
     else:
