@@ -196,7 +196,7 @@ def pair_partition_to_vec(
         if isinstance(example, np.ndarray):
             example = PosNegExample(*example)
 
-        # use numbers because we odn't know the names here
+        # use numbers because we don't know the names here
         neg_feature_vec = count_violations_memoized(
             processed_specs,
             Task(example.data, Query.from_vegalite(example[4]), example.task),
